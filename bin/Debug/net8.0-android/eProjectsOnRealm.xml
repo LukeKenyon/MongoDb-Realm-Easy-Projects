@@ -1,0 +1,1244 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>eProjectsOnRealm</name>
+    </assembly>
+    <members>
+        <member name="T:eProjectsOnRealm.Functions.Calculations">
+            <summary>
+            Calculate the number of business days between 2 dataes
+            </summary>
+            <param name="firstDay">Start Date</param>
+            <param name="lastDay">End Date</param>
+            <param name="bankHolidays"> Option Array of Bank Holidays or days to be omitted from total days </param>
+            <returns>Int total number of days</returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:eProjectsOnRealm.Functions.Calculations.TotalProjectHours(System.Int32,System.Int32)">
+            <summary>
+            Calculate the total project hours
+            </summary>
+            <param name="totalBusinessDays">Number of project days</param>
+            <param name="dailyHours">Daily Hours for project</param>
+            <returns>Decimal total hours</returns>
+        </member>
+        <member name="F:eProjectsOnRealm.Models.Project.RealmSchema">
+            <summary>
+            Defines the schema for the <see cref="T:eProjectsOnRealm.Models.Project"/> class.
+            </summary>
+        </member>
+        <member name="P:eProjectsOnRealm.Models.Project.IsManaged">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.Project.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.Project.IsFrozen">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.Project.Realm">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.Project.ObjectSchema">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.Project.DynamicApi">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.Project.BacklinksCount">
+            <inheritdoc />
+        </member>
+        <member name="E:eProjectsOnRealm.Models.Project.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.Project.op_Explicit(Realms.RealmValue)~eProjectsOnRealm.Models.Project">
+            <summary>
+            Converts a <see cref="T:Realms.RealmValue"/> to <see cref="T:eProjectsOnRealm.Models.Project"/>. Equivalent to <see cref="M:Realms.RealmValue.AsNullableRealmObject``1"/>.
+            </summary>
+            <param name="val">The <see cref="T:Realms.RealmValue"/> to convert.</param>
+            <returns>The <see cref="T:eProjectsOnRealm.Models.Project"/> stored in the <see cref="T:Realms.RealmValue"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.Project.op_Implicit(eProjectsOnRealm.Models.Project)~Realms.RealmValue">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.RealmValue"/> from <see cref="T:eProjectsOnRealm.Models.Project"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.RealmValue"/>.</param>
+            <returns>A <see cref="T:Realms.RealmValue"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.Project.op_Implicit(eProjectsOnRealm.Models.Project)~Realms.QueryArgument">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.QueryArgument"/> from <see cref="T:eProjectsOnRealm.Models.Project"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.QueryArgument"/>.</param>
+            <returns>A <see cref="T:Realms.QueryArgument"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.Project.GetTypeInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.Project.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.Project.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.Project.ToString">
+            <inheritdoc />
+        </member>
+        <member name="F:eProjectsOnRealm.Models.ProjectTask.RealmSchema">
+            <summary>
+            Defines the schema for the <see cref="T:eProjectsOnRealm.Models.ProjectTask"/> class.
+            </summary>
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTask.IsManaged">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTask.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTask.IsFrozen">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTask.Realm">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTask.ObjectSchema">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTask.DynamicApi">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTask.BacklinksCount">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTask.Parent">
+            <inheritdoc />
+        </member>
+        <member name="E:eProjectsOnRealm.Models.ProjectTask.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTask.op_Explicit(Realms.RealmValue)~eProjectsOnRealm.Models.ProjectTask">
+            <summary>
+            Converts a <see cref="T:Realms.RealmValue"/> to <see cref="T:eProjectsOnRealm.Models.ProjectTask"/>. Equivalent to <see cref="M:Realms.RealmValue.AsNullableRealmObject``1"/>.
+            </summary>
+            <param name="val">The <see cref="T:Realms.RealmValue"/> to convert.</param>
+            <returns>The <see cref="T:eProjectsOnRealm.Models.ProjectTask"/> stored in the <see cref="T:Realms.RealmValue"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTask.op_Implicit(eProjectsOnRealm.Models.ProjectTask)~Realms.RealmValue">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.RealmValue"/> from <see cref="T:eProjectsOnRealm.Models.ProjectTask"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.RealmValue"/>.</param>
+            <returns>A <see cref="T:Realms.RealmValue"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTask.op_Implicit(eProjectsOnRealm.Models.ProjectTask)~Realms.QueryArgument">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.QueryArgument"/> from <see cref="T:eProjectsOnRealm.Models.ProjectTask"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.QueryArgument"/>.</param>
+            <returns>A <see cref="T:Realms.QueryArgument"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTask.GetTypeInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTask.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTask.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTask.ToString">
+            <inheritdoc />
+        </member>
+        <member name="F:eProjectsOnRealm.Models.ProjectTaskActivity.RealmSchema">
+            <summary>
+            Defines the schema for the <see cref="T:eProjectsOnRealm.Models.ProjectTaskActivity"/> class.
+            </summary>
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTaskActivity.IsManaged">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTaskActivity.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTaskActivity.IsFrozen">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTaskActivity.Realm">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTaskActivity.ObjectSchema">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTaskActivity.DynamicApi">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTaskActivity.BacklinksCount">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.ProjectTaskActivity.Parent">
+            <inheritdoc />
+        </member>
+        <member name="E:eProjectsOnRealm.Models.ProjectTaskActivity.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTaskActivity.op_Explicit(Realms.RealmValue)~eProjectsOnRealm.Models.ProjectTaskActivity">
+            <summary>
+            Converts a <see cref="T:Realms.RealmValue"/> to <see cref="T:eProjectsOnRealm.Models.ProjectTaskActivity"/>. Equivalent to <see cref="M:Realms.RealmValue.AsNullableRealmObject``1"/>.
+            </summary>
+            <param name="val">The <see cref="T:Realms.RealmValue"/> to convert.</param>
+            <returns>The <see cref="T:eProjectsOnRealm.Models.ProjectTaskActivity"/> stored in the <see cref="T:Realms.RealmValue"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTaskActivity.op_Implicit(eProjectsOnRealm.Models.ProjectTaskActivity)~Realms.RealmValue">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.RealmValue"/> from <see cref="T:eProjectsOnRealm.Models.ProjectTaskActivity"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.RealmValue"/>.</param>
+            <returns>A <see cref="T:Realms.RealmValue"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTaskActivity.op_Implicit(eProjectsOnRealm.Models.ProjectTaskActivity)~Realms.QueryArgument">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.QueryArgument"/> from <see cref="T:eProjectsOnRealm.Models.ProjectTaskActivity"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.QueryArgument"/>.</param>
+            <returns>A <see cref="T:Realms.QueryArgument"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTaskActivity.GetTypeInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTaskActivity.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTaskActivity.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.ProjectTaskActivity.ToString">
+            <inheritdoc />
+        </member>
+        <member name="F:eProjectsOnRealm.Models.SystemUser.RealmSchema">
+            <summary>
+            Defines the schema for the <see cref="T:eProjectsOnRealm.Models.SystemUser"/> class.
+            </summary>
+        </member>
+        <member name="P:eProjectsOnRealm.Models.SystemUser.IsManaged">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.SystemUser.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.SystemUser.IsFrozen">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.SystemUser.Realm">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.SystemUser.ObjectSchema">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.SystemUser.DynamicApi">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.SystemUser.BacklinksCount">
+            <inheritdoc />
+        </member>
+        <member name="E:eProjectsOnRealm.Models.SystemUser.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.SystemUser.op_Explicit(Realms.RealmValue)~eProjectsOnRealm.Models.SystemUser">
+            <summary>
+            Converts a <see cref="T:Realms.RealmValue"/> to <see cref="T:eProjectsOnRealm.Models.SystemUser"/>. Equivalent to <see cref="M:Realms.RealmValue.AsNullableRealmObject``1"/>.
+            </summary>
+            <param name="val">The <see cref="T:Realms.RealmValue"/> to convert.</param>
+            <returns>The <see cref="T:eProjectsOnRealm.Models.SystemUser"/> stored in the <see cref="T:Realms.RealmValue"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.SystemUser.op_Implicit(eProjectsOnRealm.Models.SystemUser)~Realms.RealmValue">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.RealmValue"/> from <see cref="T:eProjectsOnRealm.Models.SystemUser"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.RealmValue"/>.</param>
+            <returns>A <see cref="T:Realms.RealmValue"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.SystemUser.op_Implicit(eProjectsOnRealm.Models.SystemUser)~Realms.QueryArgument">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.QueryArgument"/> from <see cref="T:eProjectsOnRealm.Models.SystemUser"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.QueryArgument"/>.</param>
+            <returns>A <see cref="T:Realms.QueryArgument"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.SystemUser.GetTypeInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.SystemUser.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.SystemUser.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.SystemUser.ToString">
+            <inheritdoc />
+        </member>
+        <member name="F:eProjectsOnRealm.Models.UserMessage.RealmSchema">
+            <summary>
+            Defines the schema for the <see cref="T:eProjectsOnRealm.Models.UserMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:eProjectsOnRealm.Models.UserMessage.IsManaged">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.UserMessage.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.UserMessage.IsFrozen">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.UserMessage.Realm">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.UserMessage.ObjectSchema">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.UserMessage.DynamicApi">
+            <inheritdoc />
+        </member>
+        <member name="P:eProjectsOnRealm.Models.UserMessage.BacklinksCount">
+            <inheritdoc />
+        </member>
+        <member name="E:eProjectsOnRealm.Models.UserMessage.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.UserMessage.op_Explicit(Realms.RealmValue)~eProjectsOnRealm.Models.UserMessage">
+            <summary>
+            Converts a <see cref="T:Realms.RealmValue"/> to <see cref="T:eProjectsOnRealm.Models.UserMessage"/>. Equivalent to <see cref="M:Realms.RealmValue.AsNullableRealmObject``1"/>.
+            </summary>
+            <param name="val">The <see cref="T:Realms.RealmValue"/> to convert.</param>
+            <returns>The <see cref="T:eProjectsOnRealm.Models.UserMessage"/> stored in the <see cref="T:Realms.RealmValue"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.UserMessage.op_Implicit(eProjectsOnRealm.Models.UserMessage)~Realms.RealmValue">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.RealmValue"/> from <see cref="T:eProjectsOnRealm.Models.UserMessage"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.RealmValue"/>.</param>
+            <returns>A <see cref="T:Realms.RealmValue"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.UserMessage.op_Implicit(eProjectsOnRealm.Models.UserMessage)~Realms.QueryArgument">
+            <summary>
+            Implicitly constructs a <see cref="T:Realms.QueryArgument"/> from <see cref="T:eProjectsOnRealm.Models.UserMessage"/>.
+            </summary>
+            <param name="val">The value to store in the <see cref="T:Realms.QueryArgument"/>.</param>
+            <returns>A <see cref="T:Realms.QueryArgument"/> containing the supplied <paramref name="val"/>.</returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Models.UserMessage.GetTypeInfo">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.UserMessage.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.UserMessage.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Models.UserMessage.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:eProjectsOnRealm.Services.MongoDbRealm.RealmCoreService.InitializeService">
+            <summary>
+            Create the Initial Realm Core Application
+            </summary>
+        </member>
+        <member name="M:eProjectsOnRealm.Services.MongoDbRealm.RealmCoreService.GetMainRealmThread">
+            <summary>
+            Gets the Realm Main config if it exists or creates one
+            If the user has logged in then this should be created
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:eProjectsOnRealm.Services.MongoDbRealm.RealmCoreService.GetRealmApp">
+            <summary>
+            Get the Realm App Instance 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Services.MongoDbRealm.RealmCoreService.SetInitialSync">
+            <summary>
+            Internal Method to create the initial Flexible Sync 
+            Configuration
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:eProjectsOnRealm.Services.MongoDbRealm.RealmCoreService.LoginInAsync(System.String,System.String)">
+            <summary>
+            Logs in a registered User and get the users initial sync
+            configuration
+            </summary>
+            <param name="emailAddress"></param>
+            <param name="userPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Services.MongoDbRealm.RealmCoreService.LogoutAsync">
+            <summary>
+            Logs out the current application user instance 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eProjectsOnRealm.Services.MongoDbRealm.RealmCoreService.RegisterAsync(System.String,System.String)">
+            <summary>
+            Create a New User
+            </summary>
+            <param name="emailAddress">New User Email Address</param>
+            <param name="userPassword">New User Password</param>
+            <returns></returns>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.SelectedProject">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.selectedProject"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.TaskTitle">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.taskTitle"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.TaskSummary">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.taskSummary"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.AllocatedTime">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.allocatedTime"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.DueDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.dueDate"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.StartDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.startDate"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.CalendarDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.calendarDate"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.appearingCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.AppearingCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.AppearingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.OnAppearing"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.addTaskCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.AddTaskCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.AddTaskCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.AddProjectTaskViewModel.AddTask"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.AddProjectViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectViewModel.ProjectTitle">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectViewModel._projectTitle"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectViewModel.ProjectSummary">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectViewModel._projectSummary"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectViewModel.DailyHours">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectViewModel._dailyHours"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectViewModel.StartDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectViewModel._startDate"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectViewModel.EndDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddProjectViewModel._endDate"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.AddProjectViewModel.createProjectCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.AddProjectViewModel.CreateProjectCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddProjectViewModel.CreateProjectCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.AddProjectViewModel.CreateProject"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel.TaskSummary">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel.taskSummary"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel.ActivityDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel.activityDate"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel.ConsumedHours">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel.consumedHours"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel.CalendarDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.AddTaskActivityViewModel.calendarDate"/>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.Base.ViewModelBase">
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.Base.ViewModelBase.IsInitialized">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.Base.ViewModelBase._isInitialized"/>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.LoginViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="M:eProjectsOnRealm.ViewModels.LoginViewModel.PasswordRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{5,}$</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match if at the beginning of the string.<br/>
+            ○ Zero-width positive lookahead.<br/>
+                ○ Match a character other than '\n' greedily any number of times.<br/>
+                ○ Match a character in the set [a-z].<br/>
+            ○ Zero-width positive lookahead.<br/>
+                ○ Match a character other than '\n' greedily any number of times.<br/>
+                ○ Match a character in the set [A-Z].<br/>
+            ○ Zero-width positive lookahead.<br/>
+                ○ Match a character other than '\n' greedily any number of times.<br/>
+                ○ Match a Unicode digit.<br/>
+            ○ Match a character in the set [A-Za-z\d] atomically at least 5 times.<br/>
+            ○ Match if at the end of the string or if before an ending newline.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:eProjectsOnRealm.ViewModels.LoginViewModel.EmailRegex">
+            <remarks>
+            Pattern:<br/>
+            <code> ^ ([w.-] +)@([w -] +)((.(w){2, 3})+)$</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match ' '.<br/>
+            ○ Match if at the beginning of the string.<br/>
+            ○ Match ' '.<br/>
+            ○ 1st capture group.<br/>
+                ○ Match a character in the set [-.w].<br/>
+                ○ Match ' ' atomically at least once.<br/>
+            ○ Match '@'.<br/>
+            ○ 2nd capture group.<br/>
+                ○ Match a character in the set [ -w].<br/>
+                ○ Match ' ' greedily at least once.<br/>
+            ○ 3rd capture group.<br/>
+                ○ Loop greedily at least once.<br/>
+                    ○ 4th capture group.<br/>
+                        ○ Match any character other than '\n'.<br/>
+                        ○ 5th capture group.<br/>
+                            ○ Match 'w'.<br/>
+                        ○ Match the string "{2, 3}".<br/>
+            ○ Match if at the end of the string or if before an ending newline.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.UserName">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.LoginViewModel._userName"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.Password">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.LoginViewModel._password"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.IsValid">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.LoginViewModel._isValid"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.EmailHasError">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.LoginViewModel.emailHasError"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.PasswordHasError">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.LoginViewModel.passwordHasError"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.LoginViewModel.appearingCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.LoginViewModel.AppearingCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.AppearingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.LoginViewModel.OnAppearing"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.LoginViewModel.signInCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.LoginViewModel.SignInCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.SignInCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.LoginViewModel.SignIn"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.LoginViewModel.validateCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.LoginViewModel.ValidateCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.ValidateCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.LoginViewModel.Validate"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.LoginViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.LoginViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.LoginViewModel.Register"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.LoginViewModel.clearErrorsCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.LoginViewModel.ClearErrorsCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.LoginViewModel.ClearErrorsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.LoginViewModel.ClearErrors"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.MainViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.MainViewModel.ProjectItems">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.MainViewModel.projectItems"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.MainViewModel.SelectedProject">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.MainViewModel.selectedProject"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.MainViewModel.addNewProjectCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.MainViewModel.AddNewProjectCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.MainViewModel.AddNewProjectCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.MainViewModel.AddNewProject"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.MainViewModel.viewDetailsCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.MainViewModel.ViewDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.MainViewModel.ViewDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.MainViewModel.ViewDetails(eProjectsOnRealm.Models.Project)"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.MainViewModel.refreshCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.MainViewModel.RefreshCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.MainViewModel.RefreshCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.MainViewModel.RefreshAsync"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.ProfileViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProfileViewModel.logoutCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProfileViewModel.LogoutCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProfileViewModel.LogoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProfileViewModel.Logout"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.SelectedProject">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.selectedProject"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.addTaskCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.AddTaskCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.AddTaskCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.AddTask"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.viewTasksCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.ViewTasksCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.ViewTasksCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectDetailsViewModel.ViewTasks"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.ProjectTasksViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.SheetState">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.sheetState"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.SelectedProject">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.selectedProject"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.SelectedTask">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.selectedTask"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.IsOpen">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.isOpen"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ActivitySummary">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.activitySummary"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ActivityDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.activityDate"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ConsumedHours">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.consumedHours"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.DefaultDate">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.defaultDate"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.appearingCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.AppearingCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.AppearingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.OnAppearing"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.disappearingCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.DisappearingCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.DisappearingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.OnDisappearing"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.showSheetCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ShowSheetCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ShowSheetCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ShowSheet"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.itemSelectedCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ItemSelectedCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ItemSelectedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ItemSelected"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.collectionScrolledCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.CollectionScrolledCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.CollectionScrolledCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.CollectionScrolled"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.changeTaskStatusCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ChangeTaskStatusCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ChangeTaskStatusCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ChangeTaskStatus"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.addTaskActivityCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.AddTaskActivityCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.AddTaskActivityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.AddTaskActivity"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.cancelActivityCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.CancelActivityCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.CancelActivityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.CancelActivity"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.showActivityPopupCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ShowActivityPopupCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ShowActivityPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.ProjectTasksViewModel.ShowActivityPopup"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.RegisterViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.RegisterViewModel.UserName">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.RegisterViewModel._userName"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.RegisterViewModel.Password">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.RegisterViewModel._password"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.RegisterViewModel.IsValid">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.RegisterViewModel._isValid"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.RegisterViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.RegisterViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.RegisterViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.RegisterViewModel.RegisterAsync"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.RegisterViewModel.validateCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.RegisterViewModel.ValidateCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.RegisterViewModel.ValidateCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.RegisterViewModel.Validate"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.SystemUserViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.SelectedUser">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.selectedUser"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.SelectedMessage">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.selectedMessage"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.MessageContent">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.messageContent"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.IsOpen">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.isOpen"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.UserMessageCollection">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.userMessageCollection"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.appearingCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.AppearingCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.AppearingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.SystemUserViewModel.OnAppearing"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.sendMessageCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.SendMessageCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.SendMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.SystemUserViewModel.SendMessage"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.cancelMessageCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.CancelMessageCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.CancelMessageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.SystemUserViewModel.CancelMessage"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.setMessageReadCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.SetMessageReadCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.SetMessageReadCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.SystemUserViewModel.SetMessageRead"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.SystemUserViewModel.showMsgPopupCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.ShowMsgPopupCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.SystemUserViewModel.ShowMsgPopupCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.SystemUserViewModel.ShowMsgPopup"/>.</summary>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.TaskStatusViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.TaskStatusViewModel.SelectedTask">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.TaskStatusViewModel.selectedTask"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.TaskStatusViewModel.TaskStatus">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.TaskStatusViewModel.taskStatus"/>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.TasksViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.TasksViewModel.SelectedProject">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.TasksViewModel.selectedProject"/>
+        </member>
+        <member name="T:eProjectsOnRealm.ViewModels.UsersViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.UsersViewModel.SystemUsers">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.UsersViewModel._systemUsers"/>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.UsersViewModel.SelectedUser">
+            <inheritdoc cref="F:eProjectsOnRealm.ViewModels.UsersViewModel._selectedUser"/>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.UsersViewModel.appearingCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.UsersViewModel.AppearingCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.UsersViewModel.AppearingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.UsersViewModel.Appearing"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.UsersViewModel.leavingCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.UsersViewModel.LeavingCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.UsersViewModel.LeavingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.UsersViewModel.Leaving"/>.</summary>
+        </member>
+        <member name="F:eProjectsOnRealm.ViewModels.UsersViewModel.viewUserDetailsCommand">
+            <summary>The backing field for <see cref="P:eProjectsOnRealm.ViewModels.UsersViewModel.ViewUserDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:eProjectsOnRealm.ViewModels.UsersViewModel.ViewUserDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:eProjectsOnRealm.ViewModels.UsersViewModel.ViewUserDetails"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.PasswordRegex_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the PasswordRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.PasswordRegex_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PasswordRegex_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.PasswordRegex_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PasswordRegex_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.PasswordRegex_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PasswordRegex_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PasswordRegex_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.PasswordRegex_0.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.EmailRegex_1">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the EmailRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.EmailRegex_1.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.EmailRegex_1.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.EmailRegex_1.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.EmailRegex_1.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.EmailRegex_1.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.EmailRegex_1.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.EmailRegex_1.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.EmailRegex_1.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.Utilities.StackPush(System.Int32[]@,System.Int32@,System.Int32,System.Int32)">
+            <summary>Pushes 2 values onto the backtracking stack.</summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedProject">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedProject" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TaskTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TaskTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TaskSummary">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TaskSummary" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AllocatedTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AllocatedTime" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DueDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DueDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StartDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StartDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CalendarDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CalendarDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProjectTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProjectTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProjectSummary">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProjectSummary" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DailyHours">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DailyHours" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EndDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EndDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ActivityDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ActivityDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConsumedHours">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConsumedHours" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsInitialized">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsInitialized" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsValid">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsValid" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EmailHasError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EmailHasError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PasswordHasError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PasswordHasError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProjectItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProjectItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SheetState">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SheetState" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedTask">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedTask" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsOpen">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsOpen" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ActivitySummary">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ActivitySummary" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DefaultDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DefaultDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedUser">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedUser" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MessageContent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MessageContent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.UserMessageCollection">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "UserMessageCollection" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TaskStatus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TaskStatus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SystemUsers">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SystemUsers" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedProject">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedProject" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TaskTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TaskTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TaskSummary">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TaskSummary" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AllocatedTime">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AllocatedTime" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DueDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DueDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StartDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StartDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CalendarDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CalendarDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProjectTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProjectTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProjectSummary">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProjectSummary" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DailyHours">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DailyHours" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EndDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EndDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ActivityDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ActivityDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConsumedHours">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConsumedHours" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsInitialized">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsInitialized" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsValid">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsValid" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EmailHasError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EmailHasError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PasswordHasError">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PasswordHasError" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProjectItems">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProjectItems" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SheetState">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SheetState" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedTask">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedTask" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsOpen">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsOpen" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ActivitySummary">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ActivitySummary" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DefaultDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DefaultDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedUser">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedUser" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedMessage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedMessage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MessageContent">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MessageContent" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.UserMessageCollection">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "UserMessageCollection" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TaskStatus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TaskStatus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SystemUsers">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SystemUsers" generated properties.</summary>
+        </member>
+    </members>
+</doc>

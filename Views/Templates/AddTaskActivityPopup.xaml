@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="eProjectsOnRealm.Views.Templates.AddTaskActivityPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
+    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+    xmlns:dxdf="clr-namespace:DevExpress.Maui.DataForm;assembly=DevExpress.Maui.Editors"
+    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Color="Transparent">
+
+    <Border
+        Padding="0"
+        BackgroundColor="#FFEAE7EC"
+        Stroke="Transparent">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="18" />
+        </Border.StrokeShape>
+
+
+        <dx:DXDockLayout
+            Padding="10"
+            VerticalSpacing="4">
+            <Label
+               dx:DXDockLayout.Dock="Top"
+                Padding="5"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="Add Task Activity"
+                VerticalOptions="Center" />
+
+            <dxe:MultilineEdit
+                dx:DXDockLayout.Dock="Top"
+                LabelText="Activity Summary"
+                MaxCharacterCount="300"
+                WidthRequest="300"
+
+                MaxCharacterCountOverflowMode="LimitInput"
+                
+                MaxLineCount="20"
+                MinLineCount="2"
+                Text="{Binding TaskSummary}" />
+
+            <dxe:DateEdit
+                dx:DXDockLayout.Dock="Top"
+                Date="{Binding ActivityDate}"
+                LabelText="Task Activity Date"
+                MinDate="{Binding CalendarDate}" />
+
+            <dxe:NumericEdit
+                dx:DXDockLayout.Dock="Top"
+                IsUpDownIconVisible="True"
+                LabelText="Consumed Hours"
+                MaxValue="100"
+                MinValue="1"
+                StepValue="1"
+                Value="{Binding ConsumedHours}" />
+
+            <dxco:SimpleButton dx:DXDockLayout.Dock="Top" Text="SUBMIT" 
+                               FontAttributes="Bold" Margin="0,16,0,0"/>
+
+            <dxco:SimpleButton dx:DXDockLayout.Dock="Top" Text="CANCEL" 
+                    FontAttributes="Bold" Margin="0,16,0,0"/>
+        </dx:DXDockLayout>
+
+    </Border>
+
+</toolkit:Popup>

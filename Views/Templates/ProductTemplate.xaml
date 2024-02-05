@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="eProjectsOnRealm.Views.Templates.ProductTemplate"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <Style
+                x:Key="ProjectTitleStyle"
+                BasedOn="{StaticResource MediumSizeFontStyle}"
+                TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="Gray" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*,*,*,1">
+            <StackLayout
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="12">
+                <Label
+                    BackgroundColor="{dx:ThemeColor Surface}"
+                    FontAttributes="Bold"
+                    Text="TITLE"
+                    TextColor="{dx:ThemeColor OnSurface}" />
+                <Label
+                    BackgroundColor="{dx:ThemeColor Surface}"
+                    Text="{Binding ProjectTitle}"
+                    TextColor="{dx:ThemeColor Outline}" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="8">
+                <Label
+                    BackgroundColor="{dx:ThemeColor Surface}"
+                    Text="SUMMARY"
+                    TextColor="{dx:ThemeColor OnSurface}" />
+                <Label
+                    LineBreakMode="WordWrap"
+                    Style="{StaticResource SecondaryText}"
+                    Text="{Binding Summary}" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="2"
+                Grid.Column="0"
+                Margin="8">
+                <Label
+                    FontFamily="Montserrat-Bold"
+                    FontSize="Subtitle"
+                    Style="{StaticResource ProjectTitleStyle}"
+                    Text="Start Date"
+                    TextColor="DarkGrey" />
+                <Label Text="{Binding StartDate, StringFormat={StaticResource DateTimeFormat}}" />
+            </StackLayout>
+            <StackLayout
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="8">
+                <Label
+                    FontFamily="Montserrat-Bold"
+                    FontSize="Subtitle"
+                    Style="{StaticResource ProjectTitleStyle}"
+                    Text="End Date"
+                    TextColor="DarkGrey" />
+                <Label FontSize="Small" Text="{Binding EndDate, StringFormat={StaticResource DateTimeFormat}}" />
+
+            </StackLayout>  
+            <Grid
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0,2,0,0"
+                BackgroundColor="Gray" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

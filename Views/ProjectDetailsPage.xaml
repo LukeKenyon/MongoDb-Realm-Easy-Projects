@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="eProjectsOnRealm.Views.ProjectDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
+    xmlns:dxcn="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    Title="Project Details">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{dx:ThemeColor OnSurface}" />
+        </Style>
+
+        <Style x:Key="AltText" TargetType="Label">
+            <Setter Property="TextColor" Value="{dx:ThemeColor OnSurfaceVariant}" />
+            <Setter Property="Margin" Value="0, 4, 0, 0" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+
+        <Style x:Key="ProjectInfo" TargetType="dx:DXBorder">
+            <Setter Property="Margin" Value="10,8,10,8" />
+            <Setter Property="BackgroundColor" Value="{dx:ThemeColor SurfaceVariant}" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="16" />
+        </Style>
+
+
+        <Style x:Key="cardButtonStyle" TargetType="dxco:SimpleButton">
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=White, Dark={StaticResource Gray900}}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="18" />
+            <Setter Property="Shadow">
+                <Setter.Value>
+                    <OnPlatform x:TypeArguments="Shadow">
+                        <On Platform="iOS">
+                            <On.Value>
+                                <Shadow Brush="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}" Radius="8" />
+                            </On.Value>
+                        </On>
+                        <On Platform="Android">
+                            <On.Value>
+                                <Shadow Brush="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray900}}" Radius="30" />
+                            </On.Value>
+                        </On>
+                    </OnPlatform>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding AddTaskCommand}" Text="ADD TASK" />
+    </ContentPage.ToolbarItems>
+    <dx:DXBorder>
+        <VerticalStackLayout Padding="10">
+
+            <Label FontAttributes="Bold" Text="PROJECT TITLE" />
+            <Label Style="{StaticResource AltText}" Text="{Binding SelectedProject.ProjectTitle}" />
+            <Label FontAttributes="Bold" Text="SUMMARY" />
+            <Label Style="{StaticResource AltText}" Text="{Binding SelectedProject.Summary}" />
+            <dx:DXSeparator />
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    Text="Start Date" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Style="{StaticResource AltText}"
+                    Text="{Binding SelectedProject.StartDate, StringFormat={StaticResource DateTimeFormat}}" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    Text="End Date" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Style="{StaticResource AltText}"
+                    Text="{Binding SelectedProject.EndDate, StringFormat={StaticResource DateTimeFormat}}" />
+            </Grid>
+            <dx:DXSeparator />
+            <Grid
+                Padding="0,10,0,0"
+                ColumnDefinitions="*,*"
+                RowDefinitions="*,*">
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontSize="14"
+                    Style="{StaticResource AltText}"
+                    Text="{Binding SelectedProject.DailyHours, StringFormat='Daily Hrs: {0}'}" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="14"
+                    Style="{StaticResource AltText}"
+                    Text="{Binding SelectedProject.TotalHours, StringFormat='Total Hrs: {0}'}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="14"
+                    Style="{StaticResource AltText}"
+                    Text="{Binding SelectedProject.AllocatedHours, StringFormat='Allocated Hrs: {0}'}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="14"
+                    Style="{StaticResource AltText}"
+                    Text="{Binding SelectedProject.ConsumedHours, StringFormat='Consumed Hrs: {0}'}" />
+            </Grid>
+            <dx:DXSeparator />
+            <Grid ColumnDefinitions="*,*">
+                <dxco:SimpleButton
+                    Grid.Column="0"
+                    Command="{Binding ViewTasksCommand}"
+                    HeightRequest="100"
+                    Style="{StaticResource cardButtonStyle}">
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="*,*">
+                        <Label
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            Text="Total Tasks"
+                            TextColor="{AppThemeBinding Light={StaticResource Gray950},
+                                                        Dark={StaticResource White}}"
+                            VerticalOptions="Start" />
+                        <Label Grid.Row="1" Text="{Binding SelectedProject.Tasks.Count}" />
+
+                    </Grid>
+                </dxco:SimpleButton>
+
+
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </dx:DXBorder>
+
+</ContentPage>

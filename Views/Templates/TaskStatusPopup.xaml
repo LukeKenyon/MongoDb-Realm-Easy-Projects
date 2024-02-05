@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    x:Class="eProjectsOnRealm.Views.Templates.TaskStatusPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
+    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+    xmlns:dxdf="clr-namespace:DevExpress.Maui.DataForm;assembly=DevExpress.Maui.Editors"
+    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    VerticalOptions="Start"
+    Color="Transparent">
+
+    <Border Padding="0" HeightRequest="300"
+           WidthRequest="300"
+           Stroke="Transparent"
+           BackgroundColor="#FFEAE7EC">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="28"/>
+        </Border.StrokeShape>
+
+
+        <dx:DXStackLayout Margin="10" Padding="10,20,10,20" ItemSpacing="10" Orientation="Vertical" ItemAlignment="Center">
+            <Label
+            HorizontalOptions="Center"
+            Text="Change Task Status" FontSize="18"
+            VerticalOptions="Center" Padding="10,10,10,10"/>
+
+
+
+            <dxe:ComboBoxEdit SelectedValue="{Binding SelectedTask.TaskStatus}" SelectedItem="{Binding TaskStatus}" Margin="10">
+                <dxe:ComboBoxEdit.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Planned</x:String>
+                        <x:String>Active</x:String>
+                        <x:String>Testing</x:String>
+                        <x:String>Completed</x:String>
+                    </x:Array>
+                </dxe:ComboBoxEdit.ItemsSource>
+            </dxe:ComboBoxEdit>
+
+            <Button Clicked="Button_Clicked" Text="Apply" Padding="0,10,0,10"/>
+            <Button Text="Cancel" Padding="0,10,0,10"/>
+
+
+        </dx:DXStackLayout>
+
+    </Border>
+
+</toolkit:Popup>

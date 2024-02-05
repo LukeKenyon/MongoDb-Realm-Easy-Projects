@@ -1,0 +1,65 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\eProjectsOnRealm-Base -2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{60C18317-1C81-4BD2-B2E3-25689FFCD9A3}|eProjectsOnRealm.csproj|e:\\eprojectsonrealm-base -2\\views\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{60C18317-1C81-4BD2-B2E3-25689FFCD9A3}|eProjectsOnRealm.csproj|solutionrelative:views\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60C18317-1C81-4BD2-B2E3-25689FFCD9A3}|eProjectsOnRealm.csproj|e:\\eprojectsonrealm-base -2\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{60C18317-1C81-4BD2-B2E3-25689FFCD9A3}|eProjectsOnRealm.csproj|solutionrelative:views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "E:\\eProjectsOnRealm-Base -2\\Views\\MainPage.xaml",
+              "RelativeDocumentMoniker": "Views\\MainPage.xaml",
+              "ToolTip": "E:\\eProjectsOnRealm-Base -2\\Views\\MainPage.xaml",
+              "RelativeToolTip": "Views\\MainPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-02-03T17:32:16.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProfilePage.xaml",
+              "DocumentMoniker": "E:\\eProjectsOnRealm-Base -2\\Views\\ProfilePage.xaml",
+              "RelativeDocumentMoniker": "Views\\ProfilePage.xaml",
+              "ToolTip": "E:\\eProjectsOnRealm-Base -2\\Views\\ProfilePage.xaml",
+              "RelativeToolTip": "Views\\ProfilePage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-02-03T17:31:12.367Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

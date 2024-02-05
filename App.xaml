@@ -1,0 +1,47 @@
+﻿<Application
+    x:Class="eProjectsOnRealm.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:eProjectsOnRealm">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+            <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+        </ResourceDictionary>
+
+        <ResourceDictionary>
+
+            <!--  -String Formats  -->
+            <x:String x:Key="DateTimeFormat">{0:dd MMMM yyyy}</x:String>
+
+            <!--  -Font Icons  -->
+
+            <x:String x:Key="MoreVert">&#xf142;</x:String>
+            <x:String x:Key="UserCircleSolid">&#xf2bd;</x:String>
+            <x:String x:Key="MessagePlaneRegular">&#xf1d8;</x:String>
+
+            <FontImageSource
+                x:Key="MessagePlane"
+                FontFamily="FontAwesome-Regular"
+                Glyph="{StaticResource MessagePlaneRegular}"
+                Size="20"
+                Color="DarkGray" />
+
+
+            <FontImageSource
+                x:Key="VertThreeDotMenu"
+                FontFamily="FontAwesome-Solid"
+                Glyph="{StaticResource MoreVert}"
+                Size="20"
+                Color="DarkGray" />
+
+            <FontImageSource
+                x:Key="UserCircle"
+                FontFamily="FontAwesome-Solid"
+                Glyph="{StaticResource UserCircleSolid}"
+                Size="24"
+                Color="Blue" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

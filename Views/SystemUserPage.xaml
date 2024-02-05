@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="eProjectsOnRealm.Views.SystemUserPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:eProjectsOnRealm.Functions"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
+    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+    xmlns:dxdf="clr-namespace:DevExpress.Maui.DataForm;assembly=DevExpress.Maui.Editors"
+    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:templates="clr-namespace:eProjectsOnRealm.Views.Templates"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:eProjectsOnRealm.ViewModels"
+    Title="">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="SenderTemplate">
+                <templates:SenderMessageTemplate />
+            </DataTemplate>
+
+            <DataTemplate x:Key="ReceiverTemplate">
+                <templates:ReceiverMessageTemplate />
+            </DataTemplate>
+
+            <templates:MessageDataTemplateSelector
+                x:Key="MessageTemplateSelector"
+                ReceiverTemplate="{StaticResource ReceiverTemplate}"
+                SenderTemplate="{StaticResource SenderTemplate}" />
+
+            <Style x:Key="RecentChatCollectionStyle" TargetType="CollectionView">
+                <Setter Property="Margin" Value="12, 24, 12, 0" />
+            </Style>
+
+            <Style x:Key="RecentChatAdornerStyle" TargetType="BoxView">
+                <Setter Property="Color" Value="White" />
+                <Setter Property="CornerRadius" Value="18, 18, 0, 0" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing" />
+    </ContentPage.Behaviors>
+
+    <Grid RowDefinitions=" Auto,Auto,Auto,*,Auto">
+        <Label
+            Grid.Row="0"
+            Padding="0,0,0,10"
+            FontAttributes="Bold"
+            FontSize="16"
+            HorizontalOptions="Center"
+            Text="{Binding SelectedUser.UserName}"
+            VerticalOptions="Center" />
+        <Border
+            Grid.Row="2"
+            HeightRequest="2"
+            HorizontalOptions="Fill"
+            BackgroundColor="Gray"
+            Margin="10,5,10,5"/>
+        <dxcv:DXCollectionView
+            Grid.Row="3"
+            ItemTemplate="{StaticResource MessageTemplateSelector}"
+            ItemsSource="{Binding UserMessageCollection}"
+            SelectedItem="{Binding SelectedMessage}"
+            SelectionMode="Single"
+            TapCommand="{Binding SetMessageReadCommand}"
+            Style="{StaticResource RecentChatCollectionStyle}">
+            <dxcv:DXCollectionView.GroupDescription>
+                <dxcv:GroupDescription FieldName="AppliedDate" GroupInterval="DateRange" />
+            </dxcv:DXCollectionView.GroupDescription>
+            <dxcv:DXCollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="2,0,18,10">
+                        <Label
+                            Margin="0,20,0,1"
+                            FontFamily="Roboto-Medium"
+                            Text="{Binding Value, StringFormat='{0:d}'}"
+                            TextColor="#55575c" />
+                        <BoxView BackgroundColor="#ebebeb" HeightRequest="1" />
+                    </StackLayout>
+                </DataTemplate>
+            </dxcv:DXCollectionView.GroupHeaderTemplate>
+        </dxcv:DXCollectionView>
+        <dx:DXStackLayout
+            Grid.Row="4"
+            Padding="5"
+            HorizontalOptions="Center"
+            Orientation="Horizontal"
+            VerticalOptions="Center">
+            <dxe:MultilineEdit
+                LabelText="Send a message"
+                MaxCharacterCount="300"
+                MaxCharacterCountOverflowMode="LimitInput"
+                MaxLineCount="20"
+                MinLineCount="2"
+                Text="{Binding MessageContent}"
+                WidthRequest="300" />
+            <dxco:SimpleButton
+                Margin="10"
+                Padding="10"
+                Command="{Binding SendMessageCommand}"
+                CornerRadius="10"
+                HeightRequest="50"
+                Icon="{StaticResource MessagePlane}" />
+        </dx:DXStackLayout>
+    </Grid>
+</ContentPage>

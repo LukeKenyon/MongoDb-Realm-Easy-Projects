@@ -1,0 +1,131 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = eProjectsOnRealm
+build_property.ProjectDir = E:\eProjectsOnRealm-Base -1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[E:/eProjectsOnRealm-Base -1/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[E:/eProjectsOnRealm-Base -1/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[E:/eProjectsOnRealm-Base -1/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/AddProjectPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.AddProjectPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddProjectPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddProjectPage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/AddProjectTaskPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.AddProjectTaskPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AddProjectTaskPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AddProjectTaskPage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AppShell.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MainPage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/ProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.ProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProfilePage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/ProjectDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.ProjectDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProjectDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProjectDetailsPage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/ProjectTasksPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.ProjectTasksPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProjectTasksPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProjectTasksPage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/RegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.RegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\RegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\RegisterPage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/SystemUserPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.SystemUserPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SystemUserPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SystemUserPage.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/Templates/AddTaskActivityPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.Templates.AddTaskActivityPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Templates\AddTaskActivityPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Templates\AddTaskActivityPopup.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/Templates/ProductTemplate.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.Templates.ProductTemplate.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Templates\ProductTemplate.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Templates\ProductTemplate.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/Templates/ReceiverMessageTemplate.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.Templates.ReceiverMessageTemplate.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Templates\ReceiverMessageTemplate.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Templates\ReceiverMessageTemplate.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/Templates/SenderMessageTemplate.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.Templates.SenderMessageTemplate.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Templates\SenderMessageTemplate.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Templates\SenderMessageTemplate.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/Templates/TaskStatusPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.Templates.TaskStatusPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Templates\TaskStatusPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Templates\TaskStatusPopup.xaml
+
+[E:/eProjectsOnRealm-Base -1/Views/UsersPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = eProjectsOnRealm.Views.UsersPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UsersPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UsersPage.xaml

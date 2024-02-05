@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="eProjectsOnRealm.Views.ProjectTasksPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:eProjectsOnRealm.Functions"
+    xmlns:dx="clr-namespace:DevExpress.Maui.Core;assembly=DevExpress.Maui.Core"
+    xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+    xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+    xmlns:dxdf="clr-namespace:DevExpress.Maui.DataForm;assembly=DevExpress.Maui.Editors"
+    xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:eProjectsOnRealm.ViewModels"
+    Title="Project Tasks"
+    ios:Page.UseSafeArea="true"
+    BackgroundColor="{AppThemeBinding Light={StaticResource Gray50},
+                                      Dark={StaticResource Gray925}}">
+    <ContentPage.Resources>
+        <converters:TaskStatusConverter x:Key="taskStatusColorConverter" />
+    </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior Command="{Binding AppearingCommand}" EventName="Appearing" />
+        <toolkit:EventToCommandBehavior Command="{Binding DisappearingCommand}" EventName="Disappearing" />
+    </ContentPage.Behaviors>
+   
+    <Grid>
+        <CollectionView
+            x:Name="tasksCollection"
+            Margin="10,10,10,0"
+            ItemsSource="{Binding SelectedProject.Tasks, Mode=OneWay}"
+            SelectedItem="{Binding SelectedTask, Mode=TwoWay}"
+            SelectionChangedCommand="{Binding ItemSelectedCommand}"
+            SelectionMode="Single">
+            <CollectionView.Behaviors>
+                <toolkit:EventToCommandBehavior Command="{Binding CollectionScrolledCommand}" EventName="Scrolled" />
+            </CollectionView.Behaviors>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        BackgroundColor="{AppThemeBinding Light={StaticResource White},
+                                                          Dark={StaticResource Gray600}}"
+                        Stroke="{StaticResource PrimaryBrush}"
+                        StrokeShape="{OnPlatform RoundRectangle 10,
+                                                 iOS=RoundRectangle 2}"
+                        StrokeThickness="1">
+                        <Grid
+                            x:Name="contactsGrid"
+                            Padding="16"
+                            BackgroundColor="Transparent"
+                            ColumnDefinitions="*,Auto"
+                            RowDefinitions="Auto,Auto,Auto,Auto">
+
+                            <Label
+                                Grid.Row="0"
+                                Padding="0,0,0,8"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                Text="{Binding TaskTitle}"
+                                TextColor="{StaticResource Gray900}" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                FontSize="14"
+                                Text="{Binding TaskSummary}"
+                                TextColor="{StaticResource Gray500}" />
+
+
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                HorizontalOptions="End"
+                                Text="{Binding DueDate, StringFormat='Due Date:{0:d}'}" />
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Text="{Binding TaskStatus}"
+                                TextColor="{Binding TaskStatus, Converter={StaticResource taskStatusColorConverter}}" />
+
+                            <!--  Time Values  -->
+
+                            <Label
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                FontSize="14"
+                                Text="{Binding AllocatedTime, StringFormat='Allocated Hrs: {0}'}" />
+                            <Label
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                FontSize="14"
+                                HorizontalOptions="End"
+                                Text="{Binding ConsumedTime, StringFormat='Consumed Hrs: {0}'}" />
+                        </Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="Stroke" Value="{StaticResource Tertiary}" />
+                                        <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+
+
+        </CollectionView>
+        <dxco:DXPopup
+            x:Name="actionsPopup"
+            HorizontalAlignment="Default"
+            BackgroundColor="{AppThemeBinding Light={StaticResource Gray200},
+                                              Dark={StaticResource Gray200}}"
+            CornerRadius="8"
+            IsOpen="{Binding IsOpen}"
+            Placement="Bottom"
+            ShadowColor="{AppThemeBinding Light={StaticResource Gray500},
+                                          Dark=Black}"
+            ShadowRadius="5">
+            <dx:DXDockLayout Padding="10" VerticalSpacing="4">
+                <Label
+                    Padding="5"
+                    dx:DXDockLayout.Dock="Top"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    Text="Add Task Activity"
+                    VerticalOptions="Center" />
+
+                <dxe:MultilineEdit
+                    dx:DXDockLayout.Dock="Top"
+                    LabelText="Activity Summary"
+                    MaxCharacterCount="300"
+                    MaxCharacterCountOverflowMode="LimitInput"
+                    MaxLineCount="20"
+                    MinLineCount="2"
+                    Text="{Binding ActivitySummary}"
+                    WidthRequest="300" />
+
+                <dxe:DateEdit
+                    dx:DXDockLayout.Dock="Top"
+                    Date="{Binding ActivityDate}"
+                    LabelText="Task Activity Date"
+                    MinDate="{Binding DefaultDate}" />
+
+                <dxe:NumericEdit
+                    dx:DXDockLayout.Dock="Top"
+                    IsUpDownIconVisible="True"
+                    LabelText="Consumed Hours"
+                    MaxValue="100"
+                    MinValue="1"
+                    StepValue="1"
+                    Value="{Binding ConsumedHours}" />
+
+                <dxco:SimpleButton
+                    Margin="0,16,0,0"
+                    dx:DXDockLayout.Dock="Top"
+                    FontAttributes="Bold"
+                    Text="SUBMIT" 
+                    Command="{Binding AddTaskActivityCommand}"/>
+
+                <dxco:SimpleButton
+                    Margin="0,16,0,0"
+                    dx:DXDockLayout.Dock="Top"
+                    FontAttributes="Bold"
+                    Text="CANCEL"
+                    Command="{Binding CancelActivityCommand}"/>
+            </dx:DXDockLayout>
+        </dxco:DXPopup>
+        <dxco:BottomSheet
+            x:Name="bottomSheet"
+            AllowDismiss="True"
+            HalfExpandedRatio="0.4"
+            IsModal="false"
+            ShowGrabber="True"
+            State="{Binding Source={RelativeSource AncestorType={x:Type vm:ProjectTasksViewModel}}, Path=SheetState}">
+            <Grid RowDefinitions="Auto,Auto,Auto,*">
+                <HorizontalStackLayout Padding="0,0,0,20" HorizontalOptions="Center">
+                    <dx:DXButton
+                        Margin="3"
+                        BackgroundColor="LightGreen"
+                        Command="{Binding ChangeTaskStatusCommand}"
+                        HeightRequest="38">
+                        <Label Text="ChangeState" />
+                    </dx:DXButton>
+                    <dx:DXButton
+                        BackgroundColor="LightGreen"
+                        Command="{Binding ShowActivityPopupCommand}"
+                        HeightRequest="38">
+                        <Label Text="Add Activity"
+                              />
+                    </dx:DXButton>
+
+                </HorizontalStackLayout>
+                <Border
+                    Grid.Row="1"
+                    Margin="16,0,16,0"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray500},
+                                                      Dark={StaticResource Gray900}}"
+                    HeightRequest="2"
+                    HorizontalOptions="Fill"
+                    StrokeThickness="0" />
+                <Label Text="Task Activities" Grid.Row="2" HorizontalOptions="CenterAndExpand" FontSize="16" FontAttributes="Bold"/>
+                <dx:DXDockLayout Grid.Row="3">
+                    <dxcv:DXCollectionView ItemsSource="{Binding SelectedTask.TaskActivities}" ItemSpacing="6">
+                        <dxcv:DXCollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowDefinitions="*,*" ColumnDefinitions="*,*" Padding="10">
+                                    <Label Text="{Binding ActivitySummary}" Grid.Row="0" Grid.ColumnSpan="2" FontSize="14" TextColor="{StaticResource Gray600}"/>
+                                    <Label Text="{Binding ActivityDate, StringFormat='Activity Date:{0:d}'}" Grid.Row="1" Grid.Column="0"/>
+                                    <Label Text="{Binding ConsumedHours, StringFormat='{0:n0} :Hrs'}" Grid.Row="1" Grid.Column="1" HorizontalOptions="End"/>
+                                </Grid>
+                                
+                            </DataTemplate>
+                        </dxcv:DXCollectionView.ItemTemplate>
+                        
+                        
+                        
+                    </dxcv:DXCollectionView>
+                </dx:DXDockLayout>
+            </Grid>
+            
+
+        </dxco:BottomSheet>
+
+    </Grid>
+
+
+</ContentPage>
