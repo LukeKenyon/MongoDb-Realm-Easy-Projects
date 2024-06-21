@@ -14,7 +14,7 @@ The following was used in the development of this Sample
 - MAUI Community Toolkit
 - MVVM Community Toolkit
 
-## As best a possible I have structured the project but it does need a few changes which if time permits I will do later. I did test the project with 2 Android emulators on a Windovs 11.
+## As best a possible I have structured the project but it does need a few changes which if time permits I will do later. I did test the project with 2 Android emulators on a Windows 11.
 
 ## Running the Solution
 
